@@ -692,7 +692,7 @@ html.htmlIndex
 
 .sectionHolder#mainSection
 {
-    padding: 40px 0px 80px;
+    padding: 80px 0px;
 }
 
 .sectionHolder#howItWorksSection
@@ -1519,6 +1519,11 @@ form
         margin-bottom: 20px;
     }
 
+    .sectionHolder#mainSection
+    {
+        padding-top: 40px;
+    }
+
     .sectionHolder#sdvantagesSection
     {
         padding-bottom: 0px;
@@ -1578,6 +1583,11 @@ form
     }
 
     .underTitleDecoration
+    {
+        left: var(--defaultSideSpace);
+    }
+
+    .sectionHolder .sectionContent .Button
     {
         left: var(--defaultSideSpace);
     }
