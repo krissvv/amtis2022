@@ -7,9 +7,9 @@
 
 html
 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Manrope", sans-serif;
     overflow-x: hidden;
-    background-color: #f8f8f8;
+    background-color: #f3f4f6;
     scroll-behavior: smooth;
 }
 
@@ -24,10 +24,17 @@ body
     scroll-behavior: smooth;
 }
 
+:root
+{
+    --topBarHeight: 60px;
+    --pageSideSpace: 180px;
+    --defaultSideSpace: 20px;
+}
+
 /*#region Additions */
 html.htmlIndex
 {
-    background-color: #f8f8f8;
+    background-color: #f3f4f6;
 }
 
 *
@@ -35,14 +42,18 @@ html.htmlIndex
     -webkit-tap-highlight-color: transparent;
 }
 
-::selection { background: #0000ff; }
-::-moz-selection { background: #0000ff; }
+::selection { background: #ff3864; color: #f3f4f6; }
+::-moz-selection { background: #ff3864; color: #f3f4f6; }
 /*#endregion Additions */
 
 .Colors
 {
     color: #111111;
-    color: #f8f8f8;
+    color: #f3f4f6;
+
+    color: #261447;
+    color: #66f6b1;
+    color: #ff3864;
 }
 
 /*#region Scrow bar */
@@ -53,21 +64,1049 @@ html.htmlIndex
 
 ::-webkit-scrollbar-track
 {
-    background-color: #f8f8f8;
+    background-color: #f3f4f6;
     border-radius: 70px;
 }
 
 ::-webkit-scrollbar-thumb
 {
-	background: #11111160;
+	background: #ff386460;
 	border-radius: 70px;
 }
 
 ::-webkit-scrollbar-thumb:hover
 {
-	background: #11111180;
+	background: #ff386480;
 }
 /*#endregion Scrow bar */
+
+/*#region Button */
+.Button
+{
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: var(--pageSideSpace);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #f3f4f6;
+    background-color: #ff3864;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 10px 26px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.Button:hover
+{
+    filter: brightness(.9);
+}
+
+.sectionHolder.Inverted .Button
+{
+    color: #261447;
+    background-color: #66f6b1;
+}
+
+.sectionHolder .sectionContent .Button
+{
+    left: 0;
+}
+
+.Button.withRightIcon
+{
+    padding: 0px;
+    overflow: hidden;
+}
+
+.Button.withRightIcon .buttonContent
+{
+    display: grid;
+    grid-template-columns: auto calc(10px + 20px + 10px);
+}
+
+.Button span
+{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-right: 10px;
+    padding: 10px 0px 10px 26px;
+}
+
+.Button .buttonRightIcon
+{
+    position: relative;
+    width: calc(10px + 20px + 10px);
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #e22a53;
+}
+
+.Button .buttonRightIcon i
+{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.Button.Secondary
+{
+    color: #261447;
+    background-color: #26144700;
+    border: solid 2px #261447;
+}
+
+.Button.Secondary:hover
+{
+    filter: brightness(1);
+    background-color: #26144710;
+}
+
+.Button.text
+{
+    color: #261447;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.Button.text i
+{
+    color: #ff3864;
+    margin-right: 5px;
+}
+/*#endregion Button */
+
+/*#region X Close button */
+.XCloseButton
+{
+    float: right;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 20;
+    right: 20;
+    background-color: transparent;
+    cursor: pointer;
+    pointer-events: all;
+    user-select: none;
+    z-index: 10;
+}
+
+.XCloseButton::before,
+.XCloseButton::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: calc(50% - 1.5px);
+    left: 0;
+    background-color: #ff3864;
+    transition: ease .3s;
+}
+
+.XCloseButton::before { transform: rotate(45deg); }
+.XCloseButton::after { transform: rotate(-45deg); }
+
+.XCloseButton:hover::before,
+.XCloseButton:hover::after
+{
+    filter: brightness(.9);
+}
+/*#endregion X Close button */
+
+/*#region Grid */
+.gridHolder
+{
+    display: grid;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+
+    gap: 20px;
+}
+
+.gridHolder.x2
+{
+    grid-template-columns: 1fr 1fr;
+}
+
+.gridHolder.x3
+{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gridHolder .gridElement
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: var(--defaultSideSpace) 0px;
+    overflow: hidden;
+    box-shadow: 0px 16px 30px #00000008;
+}
+
+#howItWorksSection .gridHolder .gridElement
+{
+    padding: 0px 0px var(--defaultSideSpace);
+}
+
+.gridHolder .gridElement .gridElementCorner
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 100%;
+    background-color: #66f6b1;
+    border-radius: 0px 0px 0px 10px;
+    transform: translateX(-100%);
+}
+
+.gridHolder .gridElement .gridElementCorner p
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0;
+    font-weight: 600;
+    text-align: center;
+    color: #261447;
+    transform: translateY(-50%)
+}
+
+.gridHolder .gridElement .gridElementImage
+{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+}
+
+.gridHolder .gridElement img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sectionHolder .sectionContent .gridHolder .gridElement .normalTitle,
+.sectionHolder .sectionContent .gridHolder .gridElement .normalText
+{
+    width: calc(100% - var(--defaultSideSpace) * 2);
+    max-width: none;
+    left: var(--defaultSideSpace);
+}
+/*#endregion Grid */
+
+/*#region Bulet point list */
+.bulletPointList
+{
+    position: relative;
+    width: calc(100% - var(--defaultSideSpace) * 2);
+    height: auto;
+    top: 0;
+    left: var(--defaultSideSpace);
+}
+
+#ourScootersSection .bulletPointList
+{
+    position: absolute;
+    width: 320px;
+    top: 200;
+}
+
+#ourScootersSection .bulletPointList#bulletPointList02
+{
+    float: right;
+    top: 360;
+    left: auto;
+    right: 0;
+}
+
+.bulletPointList .bulletPointElement
+{
+    display: grid;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    gap: 0px;
+}
+
+.bulletPointList.Left .bulletPointElement
+{
+    grid-template-columns: 50px auto;
+}
+
+.bulletPointList.Right .bulletPointElement
+{
+    grid-template-columns: auto 50px;
+}
+
+.bulletPointList .bulletPointElement .bulletPointElementText
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    color: #261447;
+    padding: 16px 0px;
+}
+
+.bulletPointList.Left .bulletPointElement .bulletPointElementText
+{
+    padding-right: 26px;
+}
+
+.bulletPointList.Right .bulletPointElement .bulletPointElementText
+{
+    padding-left: 26px;
+}
+
+.bulletPointList.Right .bulletPointElement .bulletPointElementText:last-child
+{
+    display: none;
+}
+
+.bulletPointList .bulletPointElement .bulletPointElementPoint
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.bulletPointList .bulletPointElement .bulletPointElementPoint div
+{
+    --bulletPointElementPointSize: 12px;
+    --bulletPointElementPointArroundWidth: 1px;
+    --bulletPointElementPointArroundSize: calc(var(--bulletPointElementPointSize) + 1px * 2 + var(--bulletPointElementPointArroundWidth) * 2);
+        
+    position: absolute;
+    width: var(--bulletPointElementPointSize);
+    height: var(--bulletPointElementPointSize);
+    top: 50%;
+    left: 50%;
+    background-color: #ff3864;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+}
+
+.bulletPointList .bulletPointElement .bulletPointElementPoint div::after
+{
+    content: "";
+    position: absolute;
+    width: var(--bulletPointElementPointArroundSize);
+    height: var(--bulletPointElementPointArroundSize);
+    top: 50%;
+    left: 50%;
+    border: solid var(--bulletPointElementPointArroundWidth) #ff3864;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+}
+/*#endregion Bulet point list */
+
+/*#region Top bar */
+.topBar
+{
+    position: fixed;
+    width: 100%;
+    height: var(--topBarHeight);
+    top: 0;
+    left: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+.topBar.Scrolled
+{
+    box-shadow: 0px 16px 30px #00000008;
+}
+
+.topBarUnder
+{
+    position: relative;
+    width: 100%;
+    height: var(--topBarHeight);
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.topBar .topBarContentLogo
+{
+    position: absolute;
+    width: fit-content;
+    height: auto;
+    top: 50%;
+    left: 40;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 24px;
+    color: #ff3864;
+    transform: translateY(-50%);
+}
+
+.topBar .topBarContent
+{
+    float: right;
+    position: absolute;
+    width: fit-content;
+    height: auto;
+    top: 50%;
+    right: 40;
+    transform: translateY(-50%);
+}
+
+.topBar .topBarContent .topBarContentText
+{
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #261447a0;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin-left: 10px;
+}
+
+.topBar .topBarContent .topBarContentText::before
+{
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    bottom: -3px;
+    left: 5%;
+    background-color: #ff3864;
+    visibility: hidden;
+    transform: scaleX(0);
+    
+    transition: ease .3s;
+}
+
+.topBar .topBarContent .topBarContentText:hover::before
+{
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.topBar .topBarContent .topBarContentText.Active
+{
+    color: #261447;
+}
+
+.topBar .topBarContent .topBarContentText.buttonLike
+{
+    color: #f3f4f6;
+    background-color: #ff3864;
+    padding: 10px 26px;
+}
+
+.topBar .topBarContent .topBarContentText.buttonLike:hover::before
+{
+    visibility: hidden;
+}
+
+.topBar .burgerMenuButton
+{
+    --burgerMenuButtonHeight: 18px;
+
+    display: none;
+    float: right;
+    position: absolute;
+    width: 40px;
+    height: var(--burgerMenuButtonHeight);
+    top: 50%;
+    right: var(--defaultSideSpace);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.topBar .burgerMenuButton div
+{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.topBar .burgerMenuButton div::before,
+.topBar .burgerMenuButton div::after
+{
+    content: "";
+}
+
+.topBar .burgerMenuButton div,
+.topBar .burgerMenuButton div::before,
+.topBar .burgerMenuButton div::after
+{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    background-color: #ff3864;
+}
+
+.topBar .burgerMenuButton:hover div,
+.topBar .burgerMenuButton:hover div::before,
+.topBar .burgerMenuButton:hover div::after
+{
+    filter: brightness(.9);
+}
+
+.topBar .burgerMenuButton div::before
+{
+    top: calc(var(--burgerMenuButtonHeight) / -2);
+}
+
+.topBar .burgerMenuButton div::after
+{
+    bottom: calc(var(--burgerMenuButtonHeight) / -2);
+}
+/*#endregion Top bar */
+
+/*#region Bottom bar */
+.bottomBarBox
+{
+    display: grid;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+.bottomBarBox .bottomBarBoxElement
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+.bottomBarBox .bottomBarBoxElement .bottomBarBoxElementText
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0;
+    text-align: right;
+    color: #555a7a;
+    margin-bottom: 5px;
+    transform: translateY(-50%);
+}
+
+.bottomBarBox .bottomBarBoxElement .bottomBarBoxElementText#bottomBarLeftText
+{
+    text-align: left;
+}
+
+.bottomBarLogo
+{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 50px;
+    color: #ff3864;
+    margin-bottom: 20px;
+}
+
+.bottomBarBoxButtonsHolder
+{
+    position: relative;
+    width: fit-content;
+}
+/*#endregion Bottom bar */
+
+/*#region Section */
+.sectionHolder
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+.sectionHolder#mainSection
+{
+    padding: 40px 0px 80px;
+}
+
+.sectionHolder#howItWorksSection
+{
+    padding: 0px 0px 80px;
+}
+
+.sectionHolder#sdvantagesSection
+{
+    padding: 80px 0px;
+}
+
+.sectionHolder#pricingSection
+{
+    padding: 60px 0px;
+}
+
+.sectionHolder#ourScootersSection
+{
+    padding: 60px 0px;
+}
+
+.sectionHolder#downloadTheAppSection
+{
+    padding: 80px 0px;
+}
+
+.sectionHolder#bottomBarSection
+{
+    padding: 40px 0px;
+}
+
+.sectionHolder.Inverted
+{
+    background-color: #261447;
+}
+
+.sectionHolder .sectionContent
+{
+    position: relative;
+    width: calc(100% - var(--pageSideSpace) * 2);
+    height: auto;
+    top: 0;
+    left: var(--pageSideSpace);
+}
+
+.sectionHolder .sectionContent .sectionContentLeftBox
+{
+    position: relative;
+    width: 50%;
+    height: auto;
+    top: 0;
+    left: 50%;
+}
+
+.sectionHolder .sectionContent .sectionContentRightImage
+{
+    position: absolute;
+    width: 50%;
+    height: auto;
+    bottom: -80;
+    left: 0;
+}
+
+.pageTitle
+{
+    position: relative;
+    width: fit-content;
+    top: 0;
+    left: 0;
+    font-size: 70px;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+.pageTitle span
+{
+    position: relative;
+    width: fit-content;
+    z-index: 1;
+}
+
+.pageTitle span::before
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: 16;
+    left: 0;
+    background-color: #66f6b1;
+    z-index: -1;
+}
+
+.pageTitle span.pageTitleColorDark
+{
+    color: #261447;
+}
+
+.pageTitle span.pageTitleColorRed
+{
+    color: #ff3864;
+}
+
+.pageTitle span.pageTitleColorRed::before
+{
+    background-color: #e8ebee;
+}
+
+.pageImage
+{
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sectionContentImage
+{
+    position: absolute;
+    width: 460px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.sectionContentImage img
+{
+    width: 100%;
+    height: auto;
+}
+
+.sectionContentDecorationImage
+{
+    position: absolute;
+    width: 380px;
+    height: auto;
+    top: 50%;
+    left: calc(50% + 200px);
+    transform: translate(-50%, -50%);
+}
+
+#ourScootersSection .sectionContentDecorationImage
+{
+    top: calc(50% + 40px);
+    left: 50%;
+}
+/*#endregion Section */
+
+/*#region Side panel */
+.sidePanel
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #00000000;
+    z-index: 11;
+    pointer-events: none;
+}
+
+.sidePanel.Active
+{
+    background-color: #00000060;
+    pointer-events: all;
+}
+
+.sidePanel .sidePanelBox
+{
+    float: right;
+    position: fixed;
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #f3f4f6;
+    transform: translateX(100%);
+}
+
+.sidePanel.Active .sidePanelBox
+{
+    transform: translateX(0%);
+}
+
+.sidePanel .sidePanelBox .sidePanelContent
+{
+    position: relative;
+    width: calc(100% - 40px);
+    height: auto;
+    top: calc(20px + 30px + 20px);
+    left: 20px;
+}
+
+.sidePanel .sidePanelBox .sidePanelContent .sidePanelContentText
+{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #555a7aa0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 10px 0px;
+}
+
+.sidePanel .sidePanelBox .sidePanelContent .sidePanelContentText.Active
+{
+    color: #555a7a;
+}
+
+.sidePanel .sidePanelBox .sidePanelContent .sidePanelContentText:hover
+{
+    color: #ff3864a0;
+}
+
+.sidePanel .sidePanelBox .sidePanelContent .sidePanelContentText.Active:hover
+{
+    color: #ff3864;
+}
+
+.sidePanel .sidePanelBox .sidePanelContent .sidePanelContentText:nth-last-child(2)
+{
+    margin-bottom: 60px;
+}
+
+.sidePanel .sidePanelBox .sidePanelContent .sidePanelContentText.buttonLike
+{
+    width: fit-content;
+    color: #f3f4f6;
+    background-color: #ff3864;
+    padding: 10px 26px;
+}
+/*#endregion Side panel */
+
+/*#region Other */
+.mainTitle
+{
+    position: relative;
+    width: fit-content;
+    max-width: 430px;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-weight: 800;
+    color: #261447;
+    margin-bottom: 8px;
+    z-index: 1;
+}
+
+.normalTitle
+{
+    position: relative;
+    width: calc(100% - var(--defaultSideSpace) * 2);
+    height: auto;
+    top: 0;
+    left: var(--defaultSideSpace);
+    font-weight: 800;
+    color: #261447;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+.normalText
+{
+    position: relative;
+    width: calc(100% - var(--defaultSideSpace) * 2);
+    height: auto;
+    top: 0;
+    left: var(--defaultSideSpace);
+    color: #261447a0;
+    margin-bottom: 20px;
+}
+
+.mainTitle.Center,
+.normalText.Center
+{
+    left: 50% !important;
+    transform: translateX(-50%);
+}
+
+.normalText.bigText
+{
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 70px;
+    color: #261447;
+}
+
+.normalText text
+{
+    font-weight: 600;
+}
+
+.sectionHolder#mainSection .normalText
+{
+    color: #261447;
+    font-weight: 600;
+}
+
+.sectionHolder#mainSection .normalText text
+{
+    font-weight: 800;
+}
+
+#ourScootersSectionText
+{
+    float: right;
+    position: absolute;
+    width: 320px;
+    top: 180;
+    left: auto;
+    right: 0;
+}
+
+.sectionHolder .sectionContent .normalTitle,
+.sectionHolder .sectionContent .normalText
+{
+    width: 100%;
+    max-width: 430px;
+    left: 0;
+}
+
+.sectionHolder.Inverted .mainTitle,
+.sectionHolder.Inverted .normalTitle
+{
+    color: #f3f4f6;
+}
+
+.sectionHolder.Inverted .normalText
+{
+    color: #f3f4f6a0;
+}
+
+.underTitleDecoration
+{
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: 0;
+    margin-bottom: 20px;
+}
+
+.underTitleDecoration.Center
+{
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sectionHolder#sdvantagesSection .underTitleDecoration
+{
+    margin-bottom: 60px;
+}
+
+.underTitleDecoration div
+{
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 4px;
+    top: 0;
+    left: 0;
+    background-color: #66f6b1;
+    margin-right: 4px;
+}
+
+.backgroundGradient
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, #ffffff, #f3f4f6);
+}
+
+.centeredImage
+{
+    position: relative;
+    width: 380px;
+    height: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
+}
+
+.decorationLine
+{
+    position: relative;
+    width: calc(100% - var(--defaultSideSpace) * 2);
+    height: 3px;
+    top: 0;
+    left: var(--defaultSideSpace);
+    background-color: #555a7a20;
+    border-radius: 999px;
+    margin: 10px 0px;
+}
+
+.taLeft { text-align: left; }
+.taCenter { text-align: center; }
+.taRight { text-align: right; }
+
+.fs10px { font-size: 10px !important; }
+.fs11px { font-size: 11px !important; }
+.fs12px { font-size: 12px !important; }
+.fs13px { font-size: 13px !important; }
+.fs14px { font-size: 14px !important; }
+.fs15px { font-size: 15px !important; }
+.fs16px { font-size: 16px !important; }
+.fs17px { font-size: 17px !important; }
+.fs18px { font-size: 18px !important; }
+.fs19px { font-size: 19px !important; }
+.fs20px { font-size: 20px !important; }
+.fs21px { font-size: 21px !important; }
+.fs22px { font-size: 22px !important; }
+
+.allCaps { text-transform: uppercase; }
+/*#endregion Other */
 
 img
 {
@@ -215,6 +1254,15 @@ form
 @media screen and (max-width: 1200px)
 {
 
+    .topBar .topBarContent
+    {
+        display: none;
+    }
+
+    .topBar .burgerMenuButton
+    {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 1100px)
@@ -225,6 +1273,63 @@ form
 @media screen and (max-width: 1000px)
 {
 
+    :root
+    {
+        --pageSideSpace: 40px;
+        --defaultSideSpace: 10px;
+    }
+
+    .sectionHolder#sdvantagesSection
+    {
+        padding-bottom: 0px;
+    }
+
+    .sectionContentImage
+    {
+        position: relative;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .sectionHolder#mainSection .sectionContentImage
+    {
+        left: calc(50% - 40px);
+    }
+
+    .sectionHolder#sdvantagesSection .sectionContentImage
+    {
+        top: 40;
+    }
+
+    .sectionContentDecorationImage
+    {
+        width: 330px;
+        height: auto;
+        top: auto;
+        bottom: 40;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #ourScootersSection .sectionContentDecorationImage
+    {
+        top: calc(50% - 110px);
+    }
+
+    .pageTitle
+    {
+        left: 50%;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+
+    .sectionHolder .sectionContent .normalTitle,
+    .sectionHolder .sectionContent .normalText
+    {
+        width: calc(100% - var(--defaultSideSpace) * 2);
+        max-width: unset;
+        left: var(--defaultSideSpace);
+    }
 }
 /*#endregion Media 1300-1000 */
 
@@ -237,6 +1342,146 @@ form
 @media screen and (max-width: 800px)
 {
 
+    :root
+    {
+        --pageSideSpace: 10px;
+    }
+
+    .sectionHolder#ourScootersSection
+    {
+        padding-bottom: 140px;
+    }
+
+    .sectionHolder#downloadTheAppSection
+    {
+        padding-bottom: 0px;
+    }
+
+    .gridHolder.x2,
+    .gridHolder.x3
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .sectionHolder#sdvantagesSection .sectionContentImage
+    {
+        left: 0;
+        transform: none;
+    }
+
+    .sectionContentDecorationImage
+    {
+        left: calc(50% - 100px);
+    }
+
+    .bulletPointList.Right .bulletPointElement
+    {
+        grid-template-columns: 50px auto;
+    }
+
+    .bulletPointList.Right .bulletPointElement .bulletPointElementText
+    {
+        padding-left: 0px;
+        padding-right: 26px;
+    }
+
+    .bulletPointList.Right .bulletPointElement .bulletPointElementText:first-child
+    {
+        display: none;
+    }
+
+    .bulletPointList.Right .bulletPointElement .bulletPointElementText:last-child
+    {
+        display: block;
+    }
+
+    #ourScootersSection .bulletPointList
+    {
+        position: relative;
+        width: calc(100% - var(--defaultSideSpace) * 2);
+        top: 0;
+        left: var(--defaultSideSpace);
+    }
+
+    #ourScootersSection .bulletPointList#bulletPointList01
+    {
+        margin-top: 80px;
+    }
+
+    #ourScootersSection .bulletPointList#bulletPointList02
+    {
+        float: none;
+        top: 0;
+        left: var(--defaultSideSpace);
+        right: auto;
+    }
+
+    #ourScootersSectionText
+    {
+        float: none;
+        position: relative;
+        width: calc(100% - var(--defaultSideSpace) * 2);
+        top: 0;
+        right: auto;
+        left: var(--defaultSideSpace);
+    }
+
+    #ourScootersSection .centeredImage
+    {
+        position: absolute;
+        top: 200;
+        margin-top: 0px;
+    }
+
+    #ourScootersSection .sectionContentDecorationImage
+    {
+        top: calc(50% - 30px);
+    }
+
+    .bottomBarBox
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .bottomBarBox .bottomBarBoxElement .bottomBarBoxElementText
+    {
+        top: 0;
+        text-align: center;
+        transform: none;
+    }
+
+    .bottomBarLogo,
+    .bottomBarBox .bottomBarBoxElement .bottomBarBoxElementText#bottomBarLeftText
+    {
+        text-align: center;
+    }
+
+    .bottomBarBoxButtonsHolder
+    {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .sectionHolder .sectionContent .sectionContentLeftBox
+    {
+        width: 100%;
+        left: 0;
+    }
+
+    .sectionHolder .sectionContent .sectionContentRightImage
+    {
+        position: relative;
+        width: 400px;
+        bottom: auto;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #bottomBarBoldText
+    {
+        font-weight: 600;
+    }
 }
 /*#endregion Media 900-800 */
 

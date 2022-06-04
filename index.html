@@ -3,7 +3,8 @@
 
 <html id="html" class="htmlIndex">
     <head id="head">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="Files/index.css">
         <link rel="icon" href="Images/Logo.png" type="image" sizes="16x16">
 
@@ -34,10 +35,296 @@
         </script>
         <!-- #endregion Default -->
 
-        Hello there
+        <div class="backgroundGradient"></div>
+
+        <div class="topBar" id="topBar">
+            <a href="#" class="topBarContentLogo">Scooty</a>
+            <div class="topBarContent">
+                <a href="#mainSection" class="topBarContentText Active">Начало</a>
+                <a href="#howItWorksSection" class="topBarContentText">Как работи?</a>
+                <a href="#sdvantagesSection" class="topBarContentText">Предимства</a>
+                <a href="#pricingSection" class="topBarContentText">Цени</a>
+                <a href="#ourScootersSection" class="topBarContentText">Нашите скутери</a>
+                <a href="#forScooty" class="topBarContentText">За Scooty</a>
+                <a href="#FAQScooty" class="topBarContentText">ЧЗВ</a>
+                <a href="#" class="topBarContentText buttonLike">Свалете приложението</a>
+            </div>
+            <div onclick="setActive('topPanelSidePanel');" class="burgerMenuButton"><div></div></div>
+        </div>
+        <div class="topBarUnder"></div>
+
+        <div onclick="setActive('topPanelSidePanel');" class="sidePanel" id="topPanelSidePanel">
+            <div onclick="event.stopPropagation();" class="sidePanelBox">
+                <div class="XCloseButton" onclick="setActive('topPanelSidePanel');"></div>
+    
+                <div class="sidePanelContent">
+                    <a href="#mainSection" class="sidePanelContentText Active">Начало</a>
+                    <a href="#howItWorksSection" class="sidePanelContentText">Как работи?</a>
+                    <a href="#sdvantagesSection" class="sidePanelContentText">Предимства</a>
+                    <a href="#pricingSection" class="sidePanelContentText">Цени</a>
+                    <a href="#ourScootersSection" class="sidePanelContentText">Нашите скутери</a>
+                    <a href="#forScooty" class="sidePanelContentText">За Scooty</a>
+                    <a href="#FAQScooty" class="sidePanelContentText">ЧЗВ</a>
+                    <a href="#" class="sidePanelContentText buttonLike">Свалете приложението</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionHolder" id="mainSection">
+            <div class="sectionContent">
+                <div class="pageTitle">
+                    <span class="pageTitleColorDark">Открий</span><br>
+                    <span class="pageTitleColorDark">Сканирай.</span><br>
+                    <span class="pageTitleColorRed">Карай...</span>
+                </div>
+    
+                <p class="normalText">
+                    <text>Scooty</text> e най-новата и модерна услуга за краткосрочен наем на електрически скутери.
+                    Свали нашето приложение и намерини в над 100 локации центъра на твоя град и карай!
+                </p>
+                
+                <div onclick="location.href = '#';" class="Button withRightIcon">
+                    <div class="buttonContent">
+                        <span class="buttonText">Свали приложението</span>
+                        <div class="buttonRightIcon"><i class="fas fa-arrow-circle-down"></i></div>
+                    </div>
+                </div>
+                <a href="#" class="Button Secondary">Научи повече</a>
+    
+                <div class="sectionContentImage">
+                    <img src="Images/Main Illustration.png" class="pageImage" alt="Scooter with doller sign">
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionHolder" id="howItWorksSection">
+            <div class="sectionContent">
+                <h1 class="mainTitle">Как работи?</h1>
+                <div class="underTitleDecoration"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <p class="normalText">
+                    С помоща на приложението Scooty App можеш бързо да откриеш най-близкия до теб
+                    скутер и да го отключиш.
+                </p>
+
+                <div class="gridHolder x3">
+                    <div class="gridElement">
+                        <div class="gridElementCorner">
+                            <p>1</p>
+                        </div>
+                        <div class="gridElementImage">
+                            <img src="Images/magnifying-glass@3x.png" alt="Magnifying glass">
+                        </div>
+                        <h2 class="normalTitle taCenter">Откриваш</h2>
+                        <p class="normalText fs14px taCenter">
+                            С помощта на нашето приложение можеш бързо и лесно да откриеш
+                            най-близкия, до твоята локация, скутер.
+                        </p>
+                    </div>
+                    <div class="gridElement">
+                        <div class="gridElementCorner">
+                            <p>2</p>
+                        </div>
+                        <div class="gridElementImage">
+                            <img src="Images/qr-code@3x.png" alt="QR code">
+                        </div>
+                        <h2 class="normalTitle taCenter">Сканираш</h2>
+                        <p class="normalText fs14px taCenter">
+                            Сканираш QR кода през приложението, за да го отключиш и активираш.
+                        </p>
+                    </div>
+                    <div class="gridElement">
+                        <div class="gridElementCorner">
+                            <p>3</p>
+                        </div>
+                        <div class="gridElementImage">
+                            <img src="Images/scooter@3x.png" alt="Scooter">
+                        </div>
+                        <h2 class="normalTitle taCenter">Караш</h2>
+                        <p class="normalText fs14px taCenter">
+                            Карай с удоволствие, но и с повишено внимание. Спазвай всички правила
+                            за движение по пътищата.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionHolder Inverted" id="sdvantagesSection">
+            <div class="sectionContent">
+                <img class="sectionContentDecorationImage" src="Images/blob.png" alt="Blob">
+
+                <p class="normalText allCaps" style="margin-bottom: 2px;">Нашите предимства</p>
+                <h1 class="mainTitle">Предимствата на скутерите Scooty</h1>
+                <div class="underTitleDecoration"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                
+                <h2 class="normalTitle">Печелиш време</h2>
+                <p class="normalText">
+                    Избягваш от задръствания, не мислиш за паркинг, придвижваш се еко.
+                </p>
+
+                <h2 class="normalTitle">Удобно и лесно</h2>
+                <p class="normalText">
+                    Нашите скутери се намират на повече от 100 места в центъра на града.
+                </p>
+
+                <h2 class="normalTitle">Бъди зелен</h2>
+                <p class="normalText">
+                    Използвайки нашите скутери ти помагаш за това въздуха и природата в града
+                    ни да остане чиста.
+                </p>
+
+                <a href="#" class="Button">Свалете приложението</a>
+
+                <div class="sectionContentImage">
+                    <img src="Images/electric scooter profile view.png" alt="Electric scooter in profile">
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionHolder" id="pricingSection">
+            <div class="sectionContent">
+                <h1 class="mainTitle taCenter Center">Цени</h1>
+                <div class="underTitleDecoration Center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            
+                <div class="gridHolder x2">
+                    <div class="gridElement">
+                        <p class="normalText allCaps fs12px">Такса за отключване</p>
+                        <p class="normalText bigText taCenter">1,50 лв.</p>
+                    </div>
+                    <div class="gridElement">
+                        <p class="normalText allCaps fs12px">Цена за минута</p>
+                        <p class="normalText bigText taCenter">0,25 лв.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionHolder" id="ourScootersSection">
+            <div class="sectionContent">
+                <img class="sectionContentDecorationImage" src="Images/blob.png" alt="Blob">
+
+                <p class="normalText allCaps taCenter Center" style="margin-bottom: 2px;">Нашите скутери</p>
+                <h1 class="mainTitle taCenter Center">Scooooootyers</h1>
+                <div class="underTitleDecoration Center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+                <p class="normalText" id="ourScootersSectionText">
+                    <text>Скутерите Scooty</text> са разработени специално за нас, по наши най-високи
+                    стандарти и изисквания за употреба в градска среда.
+                </p>
+
+                <img class="centeredImage" src="Images/electric scooter side view.png" alt="Electric scooter up front">
+                <div class="bulletPointList Right" id="bulletPointList01">
+                    <div class="bulletPointElement">
+                        <p class="bulletPointElementText">Скорост до 25км/ч</p>
+                        <div class="bulletPointElementPoint"><div></div></div>
+                        <p class="bulletPointElementText">Скорост до 25км/ч</p>
+                    </div>
+                    <div class="bulletPointElement">
+                        <p class="bulletPointElementText">Подсилено алуминиево тяло</p>
+                        <div class="bulletPointElementPoint"><div></div></div>
+                        <p class="bulletPointElementText">Подсилено алуминиево тяло</p>
+                    </div>
+                    <div class="bulletPointElement">
+                        <p class="bulletPointElementText">10 инчови ненадуваеми гуми</p>
+                        <div class="bulletPointElementPoint"><div></div></div>
+                        <p class="bulletPointElementText">10 инчови ненадуваеми гуми</p>
+                    </div>
+                </div>
+                <div class="bulletPointList Left" id="bulletPointList02">
+                    <div class="bulletPointElement">
+                        <div class="bulletPointElementPoint"><div></div></div>
+                        <p class="bulletPointElementText">Подсилено спортно окачване</p>
+                    </div>
+                    <div class="bulletPointElement">
+                        <div class="bulletPointElementPoint"><div></div></div>
+                        <p class="bulletPointElementText">Пробег с едно зареждане до 50 км.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionHolder Inverted" id="downloadTheAppSection">
+            <div class="sectionContent">
+                <div class="sectionContentLeftBox">
+                    <p class="normalText allCaps" style="margin-bottom: 2px;">Свали приложението</p>
+                    <h1 class="mainTitle">Scooty App</h1>
+                    <div class="underTitleDecoration"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    
+                    <p class="normalText" style="color: #f3f4f6;">
+                        Свалете нашето специално приложение, с което можете да намерите най-близкия
+                        скутер до вас. Отключете го и пътувайте с удоволствие.
+                    </p>
+                    <p class="normalText">
+                        Приложението ви позволява да видите всички активни скутери до вас, за да
+                        изберете този, който ви е най-удобен. След като приключите курса си просто
+                        оставете скутера и го заключете.
+                    </p>
+    
+                    <a href="#" class="Button">Свалете приложението</a>
+                </div>
+                <img class="sectionContentRightImage" src="Images/Mask Group 1.png" alt="The app on a phone">
+            </div>
+        </div>
+
+        <div class="sectionHolder" id="forScooty">
+            <div class="sectionContent">
+                
+            </div>
+        </div>
+
+        <div class="sectionHolder" id="FAQScooty">
+            <div class="sectionContent">
+                
+            </div>
+        </div>
+
+        <div class="sectionHolder" id="bottomBarSection">
+            <div class="sectionContent">
+                <div class="bottomBarBox">
+                    <div class="bottomBarBoxElement">
+                        <a href="#" class="bottomBarLogo">Scooty</a>
+                        <div class="bottomBarBoxButtonsHolder">
+                            <p class="Button text"><i class="fab fa-facebook"></i>facebook</p>
+                            <p class="Button text"><i class="fab fa-linkedin"></i>linkedIn</p>
+                            <p class="Button text"><i class="fab fa-youtube"></i>youtube</p>
+                        </div>
+                    </div>
+                    <div class="bottomBarBoxElement">
+                        <p class="bottomBarBoxElementText fs20px" style="font-weight: 600;">
+                            Keep calm and write the web.
+                        </p>
+                        <p class="bottomBarBoxElementText fs12px">
+                            АМТИС 2022 Frontend Challange.
+                        </p>
+                    </div>
+                </div>
+                <div class="decorationLine"></div>
+                <div class="bottomBarBox">
+                    <div class="bottomBarBoxElement">
+                        <p class="bottomBarBoxElementText fs12px" id="bottomBarLeftText">
+                            © Created by <text>ANGFF</text> for AMTIS Frontend Challenge 2022
+                        </p>
+                    </div>
+                    <div class="bottomBarBoxElement">
+                        <p class="bottomBarBoxElementText fs12px" id="bottomBarBoldText">
+                            © 2022 All rights reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div style="position: relative; width: 100%; height: 1000px; top: 0; left: 0;"></div> -->
     </body>
 
     <script>
+        document.addEventListener("scroll", () => {
+            document.getElementById("topPanelSidePanel").classList.remove("Active");
 
+            var scrollTop = window.pageYOffset;
+            
+            if (scrollTop > 0) document.getElementById("topBar").classList.add("Scrolled");
+            else document.getElementById("topBar").classList.remove("Scrolled");
+        });
     </script>
 </html>

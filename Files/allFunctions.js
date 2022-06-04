@@ -3,14 +3,17 @@
 
 // todo - 
 
-//* Server sockets (socket.io)
-var Socket, io;
-if (io) Socket = io.connect("/");
+function setActive(Element, activeClassName = "Active", onlyOneActive = false) {
+    if (!Element) return;
 
-if (Socket) {
-    Socket.emit("sendData", "Hello from client");
+    if (typeof Element == "string") Element = document.getElementById(Element);
 
-    Socket.on("resieveData", Data => {
-        console.log(Data);
-    });
+    if (onlyOneActive && Element.parentElement.getElementsByClassName(activeClassName)[0])
+        Element.parentElement.getElementsByClassName(activeClassName)[0].classList.remove(activeClassName);
+
+    if (!Element.classList.contains("inEdit")) {
+        if (Element.classList.contains(activeClassName))
+            Element.classList.remove(activeClassName);
+        else Element.classList.add(activeClassName);
+    }
 }
