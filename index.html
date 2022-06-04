@@ -78,18 +78,18 @@
                     <span class="pageTitleColorRed">Карай...</span>
                 </div>
     
-                <p class="normalText">
+                <p class="normalText" id="normalTextMainSectoin">
                     <text>Scooty</text> e най-новата и модерна услуга за краткосрочен наем на електрически скутери.
                     Свали нашето приложение и намерини в над 100 локации центъра на твоя град и карай!
                 </p>
-                
-                <div onclick="location.href = '#';" class="Button withRightIcon">
+
+                <div onclick="location.href = '#';" class="Button withRightIcon cursed">
                     <div class="buttonContent">
                         <span class="buttonText">Свали приложението</span>
                         <div class="buttonRightIcon"><i class="fas fa-arrow-circle-down"></i></div>
                     </div>
                 </div>
-                <a href="#" class="Button Secondary">Научи повече</a>
+                <a href="#" class="Button Secondary cursed">Научи повече</a>
     
                 <div class="sectionContentImage">
                     <img src="Images/Main Illustration.png" class="pageImage" alt="Scooter with doller sign">
@@ -268,13 +268,152 @@
 
         <div class="sectionHolder" id="forScooty">
             <div class="sectionContent">
+                <p class="normalText allCaps" style="margin-bottom: 2px;">Za Scooty</p>
+                <h1 class="mainTitle">
+                    Нашата мисия е да съградим бъдеще, в което споделеният транспорт е желан,
+                    достъпен и екологичен.
+                </h1>
+                <div class="underTitleDecoration"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+                <img class="sectionContentTallImage" src="Images/pexels-vlad-fonsark-5109821.png" alt="Two people" id="sectionContentTallImage01">
                 
+                <p class="normalText" id="normalTextForScooty">
+                    <text>Scooty</text> е стартираща компания за споделени електрически скутери.
+                    Нашата мисия е да съградим бъдеще, в което споделеният транспорт е желан,
+                    достъпен и екологичен.<br>
+                    <br>
+                    <text>Какво предлагаме?</text><br>
+                    Предлагаме, удобен и надежден краткосрочен наем на електрически
+                    скутери, на достъпни цени в повече от 100 локация в града.
+                </p>
+
+                <img class="sectionContentTallImage" src="Images/pexels-cottonbro-4604715.png" alt="Man" id="sectionContentTallImage02">
+                <img class="sectionContentTallImage" src="Images/pexels-mearth-technology-3803854.png" alt="Woman" id="sectionContentTallImage03">
             </div>
         </div>
 
         <div class="sectionHolder" id="FAQScooty">
             <div class="sectionContent">
+                <h1 class="mainTitle taCenter Center">Често задавани въпроси</h1>
+                <div class="underTitleDecoration Center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 
+                <p class="normalText taCenter Center">
+                    Ето и някой от най-задаваните въпроси, на които сме подготвили отговори,
+                    за да ви улесним.
+                </p>
+
+                <div class="foldableSectionHolder">
+                    <div class="foldableSection">
+                        <div onclick="setActive(this.parentElement);" class="foldableSectionHead">
+                            <p class="foldableSectionHeadText">
+                                1. Как мога да карам превозно средство Scooty?
+                            </p>
+                            <div class="foldableSectionHeadArrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="foldableSectionBody">
+                            <p class="normalText">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad aut odit,
+                                assumenda aspernatur esse voluptas incidunt accusantium. Distinctio
+                                totam harum maiores!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="foldableSection">
+                        <div onclick="setActive(this.parentElement);" class="foldableSectionHead">
+                            <p class="foldableSectionHeadText">
+                                2. Как да изтегля приложението?
+                            </p>
+                            <div class="foldableSectionHeadArrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="foldableSectionBody">
+                            <p class="normalText">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad aut odit,
+                                assumenda aspernatur esse voluptas incidunt accusantium. Distinctio
+                                totam harum maiores!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="foldableSection Active">
+                        <div onclick="setActive(this.parentElement);" class="foldableSectionHead">
+                            <p class="foldableSectionHeadText">
+                                3. Как да намеря скутера, който е най-близко до мен?
+                            </p>
+                            <div class="foldableSectionHeadArrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="foldableSectionBody">
+                            <p class="normalText">
+                                За да намерите превозно средство близо до вас, просто отворете
+                                приложението Scooty App на телефона си. Автоматично ще бъдете отведени
+                                до екрана на картата, показващ всички налични превозни средства Scooty
+                                във вашия район. Ако не виждате икони на превозни средства, показани на
+                                картата, намалете мащаба, за да търсите в по-широка област.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="foldableSection">
+                        <div onclick="setActive(this.parentElement);" class="foldableSectionHead">
+                            <p class="foldableSectionHeadText">
+                                4. Трябва ли да нося каска?
+                            </p>
+                            <div class="foldableSectionHeadArrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="foldableSectionBody">
+                            <p class="normalText">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad aut odit,
+                                assumenda aspernatur esse voluptas incidunt accusantium. Distinctio
+                                totam harum maiores!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="foldableSection">
+                        <div onclick="setActive(this.parentElement);" class="foldableSectionHead">
+                            <p class="foldableSectionHeadText">
+                                5. Има ли някакви правила за скорост, които трябва да знам?
+                            </p>
+                            <div class="foldableSectionHeadArrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="foldableSectionBody">
+                            <p class="normalText">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad aut odit,
+                                assumenda aspernatur esse voluptas incidunt accusantium. Distinctio
+                                totam harum maiores!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="foldableSection withBottonLine">
+                        <div onclick="setActive(this.parentElement);" class="foldableSectionHead">
+                            <p class="foldableSectionHeadText">
+                                6. Колко струва?
+                            </p>
+                            <div class="foldableSectionHeadArrow">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="foldableSectionBody">
+                            <p class="normalText">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad aut odit,
+                                assumenda aspernatur esse voluptas incidunt accusantium. Distinctio
+                                totam harum maiores!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="normalText taCenter Center">
+                    Ако не откривате отговиа на въпроса ви, може да се свържете с нас.
+                </p>
+
+                <a href="#" class="Button Center">Звържете се с нас</a>
             </div>
         </div>
 

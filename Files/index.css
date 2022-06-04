@@ -102,9 +102,20 @@ html.htmlIndex
     user-select: none;
 }
 
+.Button.cursed
+{
+    margin-bottom: -14px;
+}
+
 .Button:hover
 {
     filter: brightness(.9);
+}
+
+.Button.Center
+{
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .sectionHolder.Inverted .Button
@@ -116,6 +127,11 @@ html.htmlIndex
 .sectionHolder .sectionContent .Button
 {
     left: 0;
+}
+
+.sectionHolder .sectionContent .Button.Center
+{
+    left: 50%;
 }
 
 .Button.withRightIcon
@@ -704,6 +720,16 @@ html.htmlIndex
     padding: 80px 0px;
 }
 
+.sectionHolder#forScooty
+{
+    padding: 60px 0px;
+}
+
+.sectionHolder#FAQScooty
+{
+    padding: 40px 0px;
+}
+
 .sectionHolder#bottomBarSection
 {
     padding: 40px 0px;
@@ -736,9 +762,40 @@ html.htmlIndex
 {
     position: absolute;
     width: 50%;
+    max-width: 440px;
     height: auto;
     bottom: -80;
     left: 0;
+}
+
+.sectionHolder .sectionContent .sectionContentTallImage
+{
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+.sectionHolder .sectionContent .sectionContentTallImage#sectionContentTallImage01
+{
+    top: 300;
+    left: calc(50% - 430px + 100px);
+    transform: translateX(-50%);
+}
+
+.sectionHolder .sectionContent .sectionContentTallImage#sectionContentTallImage02
+{
+    top: 100;
+    left: calc(50% + 300px);
+    transform: translateX(-50%);
+}
+
+.sectionHolder .sectionContent .sectionContentTallImage#sectionContentTallImage03
+{
+    top: 200;
+    left: calc(50% + 300px + 100px + 20px);
+    transform: translateX(-50%);
 }
 
 .pageTitle
@@ -922,6 +979,135 @@ html.htmlIndex
 }
 /*#endregion Side panel */
 
+/*#region Foldable section */
+/* .foldableSectionHolder
+{
+    position: relative;
+    width: ;
+} */
+
+.foldableSection
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+.foldableSection::before,
+.foldableSection::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background-color: #555a7a20;
+}
+
+.foldableSection::after
+{
+    display: none;
+    top: auto;
+    bottom: 0;
+}
+
+.foldableSection.Active::after
+{
+    bottom: -20;
+}
+
+.foldableSection.withBottonLine
+{
+    margin-bottom: 40px;
+}
+
+.foldableSection.withBottonLine:after
+{
+    display: block;
+}
+
+.foldableSection .foldableSectionHead
+{
+    display: grid;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    user-select: none;
+
+    grid-template-columns: auto 50px;
+}
+
+.foldableSection .foldableSectionHead .foldableSectionHeadText
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-weight: 600;
+    color: #261447;
+    padding: 16px 0px;
+}
+
+.foldableSection .foldableSectionHead .foldableSectionHeadArrow
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.foldableSection .foldableSectionHead i
+{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0;
+    font-size: 22px;
+    line-height: 22px;
+    text-align: center;
+    color: #66f6b1;
+    transform: translateY(-50%);
+}
+
+.foldableSection:hover .foldableSectionHead i,
+.foldableSection.Active .foldableSectionHead i
+{
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.foldableSection .foldableSectionBody
+{
+    position: relative;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.foldableSection.Active .foldableSectionBody
+{
+    height: auto;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.foldableSection .foldableSectionBody .normalText
+{
+    max-width: unset !important;
+}
+/*#endregion Foldable section */
+
 /*#region Other */
 .mainTitle
 {
@@ -1000,6 +1186,13 @@ html.htmlIndex
     top: 180;
     left: auto;
     right: 0;
+}
+
+#normalTextForScooty
+{
+    margin-top: 100px;
+    left: calc(50% - 20px);
+    transform: translateX(-50%);
 }
 
 .sectionHolder .sectionContent .normalTitle,
@@ -1279,6 +1472,53 @@ form
         --defaultSideSpace: 10px;
     }
 
+    #normalTextMainSectoin
+    {
+        text-align: center;
+    }
+
+    #normalTextForScooty
+    {
+        width: calc(100% - var(--defaultSideSpace) * 2);
+        left: var(--defaultSideSpace);
+        margin-top: 0px;
+        transform: none;
+    }
+
+    .sectionHolder .sectionContent .sectionContentTallImage
+    {
+        position: relative;
+        width: calc(100% - var(--defaultSideSpace) * 2);
+        height: 300px;
+        top: 0;
+        left: var(--defaultSideSpace);
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .sectionHolder .sectionContent .sectionContentTallImage#sectionContentTallImage01
+    {
+        top: 0;
+        left: var(--defaultSideSpace);
+        transform: none;
+        content:url("../Images/pexels-vlad-fonsark-5109822.png");
+    }
+
+    .sectionHolder .sectionContent .sectionContentTallImage#sectionContentTallImage02,
+    .sectionHolder .sectionContent .sectionContentTallImage#sectionContentTallImage03
+    {
+        display: none;
+    }
+
+    .sectionHolder .sectionContent .Button.cursed
+    {
+        display: block;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 20px;
+    }
+
     .sectionHolder#sdvantagesSection
     {
         padding-bottom: 0px;
@@ -1330,6 +1570,17 @@ form
         max-width: unset;
         left: var(--defaultSideSpace);
     }
+
+    .mainTitle
+    {
+        width: calc(100% - var(--defaultSideSpace) * 2);
+        left: var(--defaultSideSpace);
+    }
+
+    .underTitleDecoration
+    {
+        left: var(--defaultSideSpace);
+    }
 }
 /*#endregion Media 1300-1000 */
 
@@ -1345,6 +1596,11 @@ form
     :root
     {
         --pageSideSpace: 10px;
+    }
+
+    .topBar .topBarContentLogo
+    {
+        left: var(--defaultSideSpace);
     }
 
     .sectionHolder#ourScootersSection
