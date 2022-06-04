@@ -100,6 +100,9 @@ html.htmlIndex
     padding: 10px 26px;
     cursor: pointer;
     user-select: none;
+
+    animation: fadeIn .3s ease-out forwards .5s;
+    opacity: 0;
 }
 
 .Button.cursed
@@ -176,6 +179,24 @@ html.htmlIndex
     top: 50%;
     left: 0;
     text-align: center;
+    transform: translateY(-50%);
+}
+
+.Button .buttonRightIcon i:last-child
+{
+    top: 0;
+    transform: translateY(-100%);
+}
+
+.Button:hover .buttonRightIcon i
+{
+    top: 100%;
+    transform: none;
+}
+
+.Button:hover .buttonRightIcon i:last-child
+{
+    top: 50%;
     transform: translateY(-50%);
 }
 
@@ -280,7 +301,14 @@ html.htmlIndex
     padding: var(--defaultSideSpace) 0px;
     overflow: hidden;
     box-shadow: 0px 16px 30px #00000008;
+
+    animation: fadeIn .3s ease-out forwards .3s;
+    opacity: 0;
 }
+
+.gridHolder .gridElement:nth-child(1) { animation-delay: .4s; }
+.gridHolder .gridElement:nth-child(2) { animation-delay: .45s; }
+.gridHolder .gridElement:nth-child(3) { animation-delay: .5s; }
 
 #howItWorksSection .gridHolder .gridElement
 {
@@ -377,7 +405,16 @@ html.htmlIndex
     margin-bottom: 10px;
 
     gap: 0px;
+
+    animation: fadeIn .3s ease-out forwards .5s;
+    opacity: 0;
 }
+
+.bulletPointList .bulletPointElement:nth-child(1) { animation-delay: .5s; }
+.bulletPointList .bulletPointElement:nth-child(2) { animation-delay: .55s; }
+.bulletPointList .bulletPointElement:nth-child(3) { animation-delay: .6s; }
+.bulletPointList .bulletPointElement:nth-child(4) { animation-delay: .65s; }
+.bulletPointList .bulletPointElement:nth-child(5) { animation-delay: .7s; }
 
 .bulletPointList.Left .bulletPointElement
 {
@@ -495,6 +532,14 @@ html.htmlIndex
     line-height: 24px;
     color: #ff3864;
     transform: translateY(-50%);
+
+    animation: fadeIn .3s ease-out forwards .1s;
+    opacity: 0;
+}
+
+.topBar .topBarContentLogo:hover
+{
+    transform: translateY(-50%) scale(1.1);
 }
 
 .topBar .topBarContent
@@ -522,7 +567,20 @@ html.htmlIndex
     border-radius: 6px;
     padding: 8px 16px;
     margin-left: 10px;
+
+    animation: fadeIn .3s ease-out forwards .3s;
+    opacity: 0;
 }
+
+.topBar .topBarContent .topBarContentText:nth-child(1) { animation-delay: .3s; }
+.topBar .topBarContent .topBarContentText:nth-child(2) { animation-delay: .35s; }
+.topBar .topBarContent .topBarContentText:nth-child(3) { animation-delay: .4s; }
+.topBar .topBarContent .topBarContentText:nth-child(4) { animation-delay: .45s; }
+.topBar .topBarContent .topBarContentText:nth-child(5) { animation-delay: .5s; }
+.topBar .topBarContent .topBarContentText:nth-child(6) { animation-delay: .55s; }
+.topBar .topBarContent .topBarContentText:nth-child(7) { animation-delay: .6s; }
+.topBar .topBarContent .topBarContentText:nth-child(8) { animation-delay: .65s; }
+.topBar .topBarContent .topBarContentText:nth-child(9) { animation-delay: .7s; }
 
 .topBar .topBarContent .topBarContentText::before
 {
@@ -814,6 +872,9 @@ html.htmlIndex
     position: relative;
     width: fit-content;
     z-index: 1;
+
+    animation: fadeIn .3s ease-out forwards .2s;
+    opacity: 0;
 }
 
 .pageTitle span::before
@@ -852,6 +913,9 @@ html.htmlIndex
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    animation: fadeIn .3s ease-out forwards .3s;
+    opacity: 0;
 }
 
 .sectionContentImage
@@ -1121,6 +1185,9 @@ html.htmlIndex
     color: #261447;
     margin-bottom: 8px;
     z-index: 1;
+
+    animation: fadeIn .3s ease-out forwards .3s;
+    opacity: 0;
 }
 
 .normalTitle
@@ -1134,6 +1201,9 @@ html.htmlIndex
     color: #261447;
     margin-bottom: 10px;
     z-index: 1;
+
+    animation: fadeIn .3s ease-out forwards .3s;
+    opacity: 0;
 }
 
 .normalText
@@ -1145,6 +1215,9 @@ html.htmlIndex
     left: var(--defaultSideSpace);
     color: #261447a0;
     margin-bottom: 20px;
+
+    animation: fadeIn .3s ease-out forwards .3s;
+    opacity: 0;
 }
 
 .mainTitle.Center,
@@ -1222,6 +1295,9 @@ html.htmlIndex
     top: 0;
     left: 0;
     margin-bottom: 20px;
+
+    animation: fadeIn .3s ease-out forwards .5s;
+    opacity: 0;
 }
 
 .underTitleDecoration.Center
@@ -1330,7 +1406,7 @@ input, textarea
 {
     border: none;
     outline: none;
-    caret-color: #0000ff;
+    caret-color: #ff3864;
 }
 
 form
@@ -1447,15 +1523,18 @@ form
 @media screen and (max-width: 1200px)
 {
 
+    /*#region Top bar */
     .topBar .topBarContent
     {
         display: none;
     }
-
+    
     .topBar .burgerMenuButton
     {
         display: block;
     }
+    /*#endregion Top bar */
+
 }
 
 @media screen and (max-width: 1100px)
@@ -1472,17 +1551,10 @@ form
         --defaultSideSpace: 10px;
     }
 
+    /*#region Section */
     #normalTextMainSectoin
     {
         text-align: center;
-    }
-
-    #normalTextForScooty
-    {
-        width: calc(100% - var(--defaultSideSpace) * 2);
-        left: var(--defaultSideSpace);
-        margin-top: 0px;
-        transform: none;
     }
 
     .sectionHolder .sectionContent .sectionContentTallImage
@@ -1576,6 +1648,21 @@ form
         left: var(--defaultSideSpace);
     }
 
+    .sectionHolder .sectionContent .Button
+    {
+        left: var(--defaultSideSpace);
+    }
+    /*#endregion Section */
+
+    /*#region Other */
+    #normalTextForScooty
+    {
+        width: calc(100% - var(--defaultSideSpace) * 2);
+        left: var(--defaultSideSpace);
+        margin-top: 0px;
+        transform: none;
+    }
+
     .mainTitle
     {
         width: calc(100% - var(--defaultSideSpace) * 2);
@@ -1586,11 +1673,8 @@ form
     {
         left: var(--defaultSideSpace);
     }
+    /*#endregion Other */
 
-    .sectionHolder .sectionContent .Button
-    {
-        left: var(--defaultSideSpace);
-    }
 }
 /*#endregion Media 1300-1000 */
 
@@ -1608,38 +1692,15 @@ form
         --pageSideSpace: 10px;
     }
 
-    .topBar .topBarContentLogo
-    {
-        left: var(--defaultSideSpace);
-    }
-
-    .sectionHolder#ourScootersSection
-    {
-        padding-bottom: 140px;
-    }
-
-    .sectionHolder#downloadTheAppSection
-    {
-        padding-bottom: 0px;
-    }
-
+    /*#region Grid */
     .gridHolder.x2,
     .gridHolder.x3
     {
         grid-template-columns: 1fr;
     }
+    /*#endregion Grid */
 
-    .sectionHolder#sdvantagesSection .sectionContentImage
-    {
-        left: 0;
-        transform: none;
-    }
-
-    .sectionContentDecorationImage
-    {
-        left: calc(50% - 100px);
-    }
-
+    /*#region Bulet point list */
     .bulletPointList.Right .bulletPointElement
     {
         grid-template-columns: 50px auto;
@@ -1681,29 +1742,16 @@ form
         left: var(--defaultSideSpace);
         right: auto;
     }
+    /*#endregion Bulet point list */
 
-    #ourScootersSectionText
+    /*#region Top bar */
+    .topBar .topBarContentLogo
     {
-        float: none;
-        position: relative;
-        width: calc(100% - var(--defaultSideSpace) * 2);
-        top: 0;
-        right: auto;
         left: var(--defaultSideSpace);
     }
+    /*#endregion Top bar */
 
-    #ourScootersSection .centeredImage
-    {
-        position: absolute;
-        top: 200;
-        margin-top: 0px;
-    }
-
-    #ourScootersSection .sectionContentDecorationImage
-    {
-        top: calc(50% - 30px);
-    }
-
+    /*#region Bottom bar */
     .bottomBarBox
     {
         grid-template-columns: 1fr;
@@ -1728,6 +1776,34 @@ form
         transform: translateX(-50%);
     }
 
+    #bottomBarBoldText
+    {
+        font-weight: 600;
+    }
+    /*#endregion Bottom bar */
+
+    /*#region Section */
+    .sectionHolder#ourScootersSection
+    {
+        padding-bottom: 140px;
+    }
+
+    .sectionHolder#downloadTheAppSection
+    {
+        padding-bottom: 0px;
+    }
+
+    .sectionHolder#sdvantagesSection .sectionContentImage
+    {
+        left: 0;
+        transform: none;
+    }
+
+    .sectionContentDecorationImage
+    {
+        left: calc(50% - 100px);
+    }
+
     .sectionHolder .sectionContent .sectionContentLeftBox
     {
         width: 100%;
@@ -1743,11 +1819,32 @@ form
         left: 50%;
         transform: translateX(-50%);
     }
+    /*#endregion Section */
 
-    #bottomBarBoldText
+    /*#region Other */
+    #ourScootersSectionText
     {
-        font-weight: 600;
+        float: none;
+        position: relative;
+        width: calc(100% - var(--defaultSideSpace) * 2);
+        top: 0;
+        right: auto;
+        left: var(--defaultSideSpace);
     }
+
+    #ourScootersSection .centeredImage
+    {
+        position: absolute;
+        top: 200;
+        margin-top: 0px;
+    }
+
+    #ourScootersSection .sectionContentDecorationImage
+    {
+        top: calc(50% - 30px);
+    }
+    /*#endregion Other */
+
 }
 /*#endregion Media 900-800 */
 

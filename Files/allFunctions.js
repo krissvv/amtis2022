@@ -11,9 +11,7 @@ function setActive(Element, activeClassName = "Active", onlyOneActive = false) {
     if (onlyOneActive && Element.parentElement.getElementsByClassName(activeClassName)[0])
         Element.parentElement.getElementsByClassName(activeClassName)[0].classList.remove(activeClassName);
 
-    if (!Element.classList.contains("inEdit")) {
-        if (Element.classList.contains(activeClassName))
-            Element.classList.remove(activeClassName);
-        else Element.classList.add(activeClassName);
-    }
+    if (Element.classList.contains(activeClassName))
+        Element.classList.remove(activeClassName);
+    else Element.classList.add(activeClassName);
 }

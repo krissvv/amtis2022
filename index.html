@@ -6,22 +6,20 @@
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="Files/index.css">
-        <link rel="icon" href="Images/Logo.png" type="image" sizes="16x16">
+        <link rel="icon" href="Images/scooter.png" type="image" sizes="16x16">
 
         <meta charset="utf-8">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
+        <meta name="description" content="Scooty e най-новата и модерна услуга за краткосрочен наем на електрически скутери. Свали нашето приложение и намерини в над 100 локации центъра на твоя град и карай!        ">
+        <meta name="keywords" content="Scooty, Скути, електрическа, модерна, услуга, краткосрочен, скутери, приложение">
         <meta name="author" content="Kristiyan Valchev">
         <meta name="viewport" content="width = device-width, user-scalable = no, initial-scale = 1">
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/190623e0b3.js" crossorigin="anonymous"></script>
-
-        <script src="/socket.io/socket.io.js"></script>
         
         <script type="text/javascript" src="Files/allFunctions.js"></script>
 
-        <title id="Title">AMTIS | 2022</title>
+        <title id="Title">Scooty | AMTIS 2022</title>
     </head>
 
     <body id="body">
@@ -47,7 +45,7 @@
                 <a href="#ourScootersSection" class="topBarContentText">Нашите скутери</a>
                 <a href="#forScooty" class="topBarContentText">За Scooty</a>
                 <a href="#FAQScooty" class="topBarContentText">ЧЗВ</a>
-                <a href="#" class="topBarContentText buttonLike">Свалете приложението</a>
+                <a href="#downloadTheAppSection" class="topBarContentText buttonLike">Свалете приложението</a>
             </div>
             <div onclick="setActive('topPanelSidePanel');" class="burgerMenuButton"><div></div></div>
         </div>
@@ -65,7 +63,7 @@
                     <a href="#ourScootersSection" class="sidePanelContentText">Нашите скутери</a>
                     <a href="#forScooty" class="sidePanelContentText">За Scooty</a>
                     <a href="#FAQScooty" class="sidePanelContentText">ЧЗВ</a>
-                    <a href="#" class="sidePanelContentText buttonLike">Свалете приложението</a>
+                    <a href="#downloadTheAppSection" class="sidePanelContentText buttonLike">Свалете приложението</a>
                 </div>
             </div>
         </div>
@@ -86,13 +84,16 @@
                 <div onclick="location.href = '#';" class="Button withRightIcon cursed">
                     <div class="buttonContent">
                         <span class="buttonText">Свали приложението</span>
-                        <div class="buttonRightIcon"><i class="fas fa-arrow-circle-down"></i></div>
+                        <div class="buttonRightIcon">
+                            <i class="fas fa-arrow-circle-down"></i>
+                            <i class="fas fa-arrow-circle-down"></i>
+                        </div>
                     </div>
                 </div>
                 <a href="#" class="Button Secondary cursed">Научи повече</a>
     
                 <div class="sectionContentImage">
-                    <img src="Images/Main Illustration.png" class="pageImage" alt="Scooter with doller sign">
+                    <img src="Images/Main Illustration.png" class="pageImage" alt="Scooter with doller sign" id="mainSectionImage">
                 </div>
             </div>
         </div>
@@ -176,7 +177,7 @@
                 <a href="#" class="Button">Свалете приложението</a>
 
                 <div class="sectionContentImage">
-                    <img src="Images/electric scooter profile view.png" alt="Electric scooter in profile">
+                    <img src="Images/electric scooter profile view.png" alt="Electric scooter in profile" id="sdvantagesSectionScooterImage">
                 </div>
             </div>
         </div>
@@ -189,11 +190,11 @@
                 <div class="gridHolder x2">
                     <div class="gridElement">
                         <p class="normalText allCaps fs12px">Такса за отключване</p>
-                        <p class="normalText bigText taCenter">1,50 лв.</p>
+                        <p class="normalText bigText taCenter" id="unlockPriceTextElement">1,50 лв.</p>
                     </div>
                     <div class="gridElement">
                         <p class="normalText allCaps fs12px">Цена за минута</p>
-                        <p class="normalText bigText taCenter">0,25 лв.</p>
+                        <p class="normalText bigText taCenter" id="minutePriceTextElement">0,25 лв.</p>
                     </div>
                 </div>
             </div>
@@ -212,7 +213,7 @@
                     стандарти и изисквания за употреба в градска среда.
                 </p>
 
-                <img class="centeredImage" src="Images/electric scooter side view.png" alt="Electric scooter up front">
+                <img class="centeredImage" src="Images/electric scooter side view.png" alt="Electric scooter up front" id="ourScootersSectionScooterImage">
                 <div class="bulletPointList Right" id="bulletPointList01">
                     <div class="bulletPointElement">
                         <p class="bulletPointElementText">Скорост до 25км/ч</p>
@@ -262,7 +263,7 @@
     
                     <a href="#" class="Button">Свалете приложението</a>
                 </div>
-                <img class="sectionContentRightImage" src="Images/Mask Group 1.png" alt="The app on a phone">
+                <img class="sectionContentRightImage" src="Images/Mask Group 1.png" alt="The app on a phone" id="downloadTheAppSectionPhoneImage">
             </div>
         </div>
 
@@ -276,7 +277,7 @@
                 <div class="underTitleDecoration"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
                 <img class="sectionContentTallImage" src="Images/pexels-vlad-fonsark-5109821.png" alt="Two people" id="sectionContentTallImage01">
-                
+
                 <p class="normalText" id="normalTextForScooty">
                     <text>Scooty</text> е стартираща компания за споделени електрически скутери.
                     Нашата мисия е да съградим бъдеще, в което споделеният транспорт е желан,
@@ -452,8 +453,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- <div style="position: relative; width: 100%; height: 1000px; top: 0; left: 0;"></div> -->
     </body>
 
     <script>
